@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App Features Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6f8; padding: 20px; }
+    h1 { text-align: center; color: #333; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 20px; }
+    .card { background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .card h3 { margin: 0 0 8px 0; color: #0070f3; }
+    .card p { margin: 4px 0; color: #555; font-size: 14px; }
+    .tag { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <h1>App Features Directory</h1>
+  <div id="feature-grid" class="grid"></div>
+
+  <script>
+    // Apka JSON Data
+    const features = [
+      { "feature_id": "in_app_search", "name_en": "In-App Search", "name_hinglish": "App ke andar search" },
+      { "feature_id": "notification_system", "name_en": "Notification System", "name_hinglish": "Notification system" },
+      { "feature_id": "user_analytics_dashboard", "name_en": "User Analytics Dashboard", "name_hinglish": "User analytics dashboard" },
+      { "feature_id": "user_onboarding_walkthroughs", "name_en": "User Onboarding Walkthroughs", "name_hinglish": "User onboarding aur walkthrough" },
+      { "feature_id": "automated_contract_generation", "name_en": "Automated Contract Generation", "name_hinglish": "Automated contract generation" },
+      { "feature_id": "automated_nda_template_library", "name_en": "Automated NDA Template Library", "name_hinglish": "Automated NDA aur template library" },
+      { "feature_id": "influencer_relationship_management", "name_en": "Influencer Relationship Management", "name_hinglish": "Influencer relationship management" },
+      { "feature_id": "multi_channel_social_media_integration", "name_en": "Multi-Channel Social Media Integration", "name_hinglish": "Social media integration" },
+      { "feature_id": "auto_direct_messages", "name_en": "Auto Direct Messages", "name_hinglish": "Auto direct messaging" },
+      { "feature_id": "in_built_messaging", "name_en": "In-Built Messaging", "name_hinglish": "Inbuilt messaging" },
+      { "feature_id": "email_marketing_suite", "name_en": "Email Marketing Suite", "name_hinglish": "Email marketing" },
+      { "feature_id": "creator_discovery_engine", "name_en": "Creator Discovery Engine", "name_hinglish": "Creator discovery engine" },
+      { "feature_id": "automated_reporting_system_api_integration", "name_en": "Automated Reporting System API Integration", "name_hinglish": "Automated reporting aur API integration" },
+      { "feature_id": "automated_dispute_resolution", "name_en": "Automated Dispute Resolution", "name_hinglish": "Dispute resolution" },
+      { "feature_id": "product_sampling_seeding", "name_en": "Product Sampling Seeding", "name_hinglish": "Product sampling" },
+      { "feature_id": "affiliate_marketing_sales_tracking", "name_en": "Affiliate Marketing Sales Tracking", "name_hinglish": "Affiliate marketing aur sales tracking" },
+      { "feature_id": "automated_invoicing_payment_schedule_system", "name_en": "Automated Invoicing Payment Schedule System", "name_hinglish": "Invoicing aur payment schedule" },
+      { "feature_id": "fraud_detection_system", "name_en": "Fraud Detection System", "name_hinglish": "Fraud detection" },
+      { "feature_id": "copycat_copyright_engagement_detection", "name_en": "Copycat Copyright Engagement Detection", "name_hinglish": "Copycat detection" },
+      { "feature_id": "multilingual_support", "name_en": "Multilingual Support", "name_hinglish": "Multilingual support" },
+      { "feature_id": "activity_log_audit_trail", "name_en": "Activity Log Audit Trail", "name_hinglish": "Activity log" },
+      { "feature_id": "feedback_suggestion_system", "name_en": "Feedback Suggestion System", "name_hinglish": "Feedback system" },
+      { "feature_id": "dedicated_faq_help_center", "name_en": "Dedicated FAQ Help Center", "name_hinglish": "FAQ aur help center" },
+      { "feature_id": "premium_tier_benefits", "name_en": "Premium Tier Benefits", "name_hinglish": "Premium tier benefits" },
+      { "feature_id": "offline_mode", "name_en": "Offline Mode", "name_hinglish": "Offline mode" }
+    ];
+
+    const grid = document.getElementById('feature-grid');
+
+    features.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <span class="tag">${item.feature_id}</span>
+        <h3>${item.name_en}</h3>
+        <p><strong>Hinglish:</strong> ${item.name_hinglish}</p>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
